@@ -241,8 +241,6 @@
     </style>
 </head>
 <body id="body">
-
-    <!-- Navbar sticky centrée et transparente -->
     <div class="navbar" id="navbar">
         <div class="navbar-content">
             <button onclick="window.location.href='login.html'">Login</button>
@@ -253,7 +251,6 @@
         </div>
     </div>
 
-    <!-- Hero section avec effet Parallax -->
     <div class="hero">
         <div class="hero-content">
             <h1>Apprenez à coder, un langage à la fois</h1>
@@ -261,7 +258,6 @@
         </div>
     </div>
 
-    <!-- Introduction -->
     <div class="container">
         <div class="intro">
             <h1>Bienvenue sur la Plateforme d'Apprentissage du Code</h1>
@@ -275,29 +271,26 @@
             </p>
         </div>
 
-        <!-- Boutons des langages -->
+
         <div class="languages" id="languageButtons">
             <button onclick="window.location.href='python.html'">Python</button>
             <button onclick="window.location.href='javascript.html'">JavaScript</button>
             <button onclick="window.location.href='java.html'">Java</button>
             <button onclick="window.location.href='cpp.html'">C++</button>
             <button onclick="window.location.href='php.html'">PHP</button>
-            <button onclick="window.location.href='ruby.html'">Ruby</button>
+            <button onclick="window.location.href='haskell.html'">Haskell</button>
             <button onclick="window.location.href='csharp.html'">C#</button>
         </div>
     </div>
 
-    <!-- Bouton de retour -->
     <button class="back-button" onclick="goBack()">&#8592;</button>
 
-    <!-- Toggle de thème -->
     <div class="theme-toggle" onclick="toggleTheme()">
         <span>Clair</span>
         <span>Sombre</span>
     </div>
 
     <script>
-        // Fonction de recherche qui filtre les langages
         function searchLang() {
             const input = document.getElementById("searchInput").value.toLowerCase();
             const buttons = document.getElementById("languageButtons").getElementsByTagName("button");
@@ -311,25 +304,20 @@
             }
         }
 
-        // Fonction pour retourner à la page précédente
         function goBack() {
             window.history.back();
         }
 
-        // Gestion des thèmes avec bascule
         function toggleTheme() {
             const body = document.getElementById('body');
             const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-            // Appliquer le nouveau thème
             applyTheme(newTheme);
 
-            // Sauvegarder le thème dans le localStorage
             localStorage.setItem('theme', newTheme);
         }
 
-        // Fonction pour appliquer le thème
         function applyTheme(theme) {
             const body = document.getElementById('body');
             if (theme === 'light') {
@@ -341,9 +329,8 @@
             }
         }
 
-        // Charger le thème depuis le localStorage au chargement de la page
         window.onload = function() {
-            const savedTheme = localStorage.getItem('theme') || 'light'; // Par défaut, le thème clair
+            const savedTheme = localStorage.getItem('theme') || 'light';
             applyTheme(savedTheme);
         }
     </script>
