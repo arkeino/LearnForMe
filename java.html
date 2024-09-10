@@ -26,7 +26,6 @@
             color: #45a049;
         }
 
-        /* Bouton Retour */
         .back-button {
             position: fixed;
             top: 20px;
@@ -47,7 +46,6 @@
             color: rgba(0, 0, 0, 0.9);
         }
 
-        /* Bouton de thème */
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -70,7 +68,6 @@
             transition: color 0.3s ease;
         }
 
-        /* Thème sombre */
         body.dark-theme {
             background-color: #333;
             color: #f8f9fa;
@@ -87,10 +84,8 @@
 </head>
 <body id="body">
 
-    <!-- Bouton de retour -->
     <button class="back-button" onclick="goBack()">&#8592;</button>
 
-    <!-- Toggle de thème -->
     <div class="theme-toggle" onclick="toggleTheme()">
         <span>Clair</span>
         <span>Sombre</span>
@@ -103,25 +98,21 @@
     </div>
 
     <script>
-        // Fonction pour retourner à la page précédente
+
         function goBack() {
             window.history.back();
         }
 
-        // Gestion des thèmes avec bascule
         function toggleTheme() {
             const body = document.getElementById('body');
             const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-            // Appliquer le nouveau thème
             applyTheme(newTheme);
 
-            // Sauvegarder le thème dans le localStorage
             localStorage.setItem('theme', newTheme);
         }
 
-        // Fonction pour appliquer le thème
         function applyTheme(theme) {
             const body = document.getElementById('body');
             if (theme === 'light') {
@@ -133,9 +124,8 @@
             }
         }
 
-        // Charger le thème depuis le localStorage au chargement de la page
         window.onload = function() {
-            const savedTheme = localStorage.getItem('theme') || 'light'; // Par défaut, le thème clair
+            const savedTheme = localStorage.getItem('theme') || 'light';
             applyTheme(savedTheme);
         }
     </script>
