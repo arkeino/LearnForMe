@@ -70,26 +70,21 @@
 </head>
 <body id="body">
 
-    <!-- Login content -->
     <h1>Connexion</h1>
     <p>Veuillez entrer vos informations de connexion.</p>
 
-    <!-- Bouton de retour -->
     <button class="back-button" onclick="goBack()">&#8592;</button>
 
-    <!-- Toggle de thème -->
     <div class="theme-toggle" onclick="toggleTheme()">
         <span>Clair</span>
         <span>Sombre</span>
     </div>
 
     <script>
-        // Fonction pour retourner à la page précédente
         function goBack() {
             window.history.back();
         }
 
-        // Gestion des thèmes
         function toggleTheme() {
             const body = document.getElementById('body');
             const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
